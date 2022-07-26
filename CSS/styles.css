@@ -9,6 +9,35 @@
     --nav-button-bg-color: #F5F4FA;
 }
 
+h1,
+h2,
+h3,
+h4,
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul,
+ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+/* Но в домашке так делать не разрешается*/
+img {
+    display: block;
+}
+
+.container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 
 
 .body {
@@ -63,7 +92,40 @@
 }
 
 /*======================HEADER========================*/
-.menu-link {
+.page-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-nav {
+    display: flex;
+    align-items: center;
+
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.list-contacts {
+    display: flex;
+    align-items: center;
+
+
+}
+
+.page-nav .link-logo {
+    margin-right: 93px;
+}
+
+.menu-item:not(:last-child) {
+    margin-right: 50px;
+}
+
+.menu-link,
+.link-contacts {
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
@@ -73,33 +135,39 @@
 
 }
 
+.link-mail,
+.link-tel {
+    color: var(--secondary-text-color);
+
+}
+
+/* через псевдокласс не получалось сделать, почему то не работал,
+пришлось присвоить ссылкам еще один класс*/
+.link-mail {
+    margin-right: 50px;
+}
+
 .menu-link:hover,
-.menu-link:focus {
+.link-mail:hover,
+.link-tel:hover,
+.menu-link:focus,
+.link-mail:focus,
+.link-tel:focus {
     color: #2196F3;
 
-}
-
-.contacts {
-
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
-    color: var(--secondary-text-color);
-}
-
-/*color: #2196F3 цвет акцента;
-    */
-.contacts:hover,
-.contacts:focus {
-    color: var(--acent-color)
 }
 
 .active {
     color: var(--acent-color);
 }
 
+
+
 /*========================HERO============================*/
+.hero {
+    background-color: var(--background-color);
+}
+
 .hero-title {
     font-weight: 900;
     font-size: 44px;
@@ -110,12 +178,11 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--white-color);
-    background-color: var(--background-color);
+
 }
 
 /*Странно, но почему-то кнопка не наследует свойства*/
 .modal-btn {
-    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;
