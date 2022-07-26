@@ -1,0 +1,274 @@
+:root {
+    --primary-text-color: #212121;
+    --acent-color: #2196F3;
+    --secondary-text-color: #757575;
+    --white-color: #FFFFFF;
+    --background-color: #2F303A;
+    --logo-black-color: #000000;
+    --footer-link-color: rgba(255, 255, 255, 0.6);
+    --nav-button-bg-color: #F5F4FA;
+}
+
+
+
+.body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--primary-text-color);
+    letter-spacing: 0.03em;
+}
+
+/*Сброс стилей для ссылок*/
+.link,
+.link-logo {
+    text-decoration: none;
+}
+
+/*Сброс стилей для списков*/
+.list {
+    list-style: none;
+}
+
+/*======================COMPONENTS==========================*/
+
+.section-title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.17;
+    text-align: center;
+
+}
+
+/*Логотип*/
+.link-logo {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
+    /* letter-spacing: 0.03em;*/
+    color: var(--acent-color);
+}
+
+
+/*======================/COMPONENTS==========================*/
+
+
+/*Часть логотипа оборачиваем в span, чтобы поменять цвет части логотипа*/
+.logo-color {
+    color: var(--logo-black-color);
+
+}
+
+.adress {
+    font-style: normal;
+}
+
+/*======================HEADER========================*/
+.menu-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: inherit;
+
+
+}
+
+.menu-link:hover,
+.menu-link:focus {
+    color: #2196F3;
+
+}
+
+.contacts {
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: var(--secondary-text-color);
+}
+
+/*color: #2196F3 цвет акцента;
+    */
+.contacts:hover,
+.contacts:focus {
+    color: var(--acent-color)
+}
+
+.active {
+    color: var(--acent-color);
+}
+
+/*========================HERO============================*/
+.hero-title {
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+    /* or 136% */
+
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--white-color);
+    background-color: var(--background-color);
+}
+
+/*Странно, но почему-то кнопка не наследует свойства*/
+.modal-btn {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    /* identical to box height, or 188% */
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    background: var(--acent-color);
+
+}
+
+/* на кнопке должен быть хвер и фокус, но я в фигме не нашел какой*/
+/*.modal-btn:hover,
+.modal-btn:focus {}. поэтому задаю пока томато*/
+
+.modal-btn:hover,
+.modal-btn:focus {
+    color: tomato;
+    background: var(--primary-text-color)
+}
+
+
+/*========================/HERO============================*/
+
+
+/*=========Особенности(features)=========*/
+.features-list-title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+
+
+}
+
+.features-list-text {
+    font-size: 14px;
+    line-height: 1.71;
+    /* or 171% */
+    color: var(--secondary-text-color);
+}
+
+/*=========/Особенности(features)=========*/
+/*=========Чем мы занимаемся=========*/
+/*=========/Чем мы занимаемся=========*/
+/*=========Наша команда(Team)=========*/
+.team-list-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+
+
+
+}
+
+.team-list-text {
+
+    font-size: 16px;
+    line-height: 1.91;
+
+    color: var(--secondary-text-color);
+
+}
+
+/*=========/Наша команда(Team)=========*/
+/*===========Footer=================*/
+.footer {
+    background-color: var(--background-color)
+}
+
+.footer .logo-color {
+    color: var(--white-color);
+
+}
+
+.map,
+.footer-link {
+    font-size: 14px;
+    line-height: 1.71;
+    color: var(--white-color);
+
+}
+
+.footer-link {
+
+
+    color: var(--footer-link-color)
+}
+
+.map:focus,
+.map:hover {
+    color: var(--acent-color);
+}
+
+.footer-link:hover,
+.footer-link:focus {
+    color: var(--acent-color);
+
+}
+
+/*===========/Footer=================*/
+
+
+/*=====================================Portfolio============================================*/
+/*Заголовок будет скрыт, поэтому применил параметры с Н1 главной страницы*/
+.main-title {
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--logo-black-color)
+}
+
+.nav-btn {
+    /*========================Кнопки навигации по портфолио========================*/
+    /*Странно, но почему-то кнопка не наследует свойства*/
+
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.63;
+    text-align: center;
+    cursor: pointer;
+    color: var(--primary-text-color);
+
+}
+
+.nav-btn:focus,
+.nav-btn:hover {
+    color: var(--white-color);
+    background: var(--acent-color);
+}
+
+/*=========================Выполненные проекты=========================*/
+.portfolio-list-title {
+
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+}
+
+.portfolio-list-text {
+
+    font-size: 16px;
+    line-height: 1.88;
+    color: var(--secondary-text-color);
+}
+
+
+/*===========/Portfolio=================*/
