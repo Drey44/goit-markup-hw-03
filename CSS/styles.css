@@ -69,7 +69,13 @@ img {
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
+    margin-bottom: 50px;
 
+}
+
+.features-list-title,
+.team-list-title {
+    margin-bottom: 10px;
 }
 
 /*Логотип*/
@@ -78,9 +84,15 @@ img {
     font-weight: 700;
     font-size: 26px;
     line-height: 1.19;
-    /* letter-spacing: 0.03em;*/
     color: var(--acent-color);
 }
+
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+
 
 
 /*======================/COMPONENTS==========================*/
@@ -101,6 +113,10 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #ECECEC;
+
 }
 
 .page-nav {
@@ -147,8 +163,6 @@ img {
 
 }
 
-/* через псевдокласс не получалось сделать, почему то не работал,
-пришлось присвоить ссылкам еще один класс*/
 .link-mail {
     margin-right: 50px;
 }
@@ -158,16 +172,6 @@ img {
     color: var(--acent-color)
 }
 
-/*.menu-link:hover,
-.link-mail:hover,
-.link-tel:hover,
-.menu-link:focus,
-.link-mail:focus,
-.link-tel:focus {
-    color: #2196F3;
-
-}
-*/
 .active {
     color: var(--acent-color);
 }
@@ -175,44 +179,50 @@ img {
 
 
 /*========================HERO============================*/
-.hero {
+.hero-section {
     background-color: var(--background-color);
+    padding-top: 200px;
+    padding-bottom: 200px;
 }
+
 
 .hero-title {
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
-    /* or 136% */
-
     text-align: center;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--white-color);
+    margin-bottom: 40px;
 
 }
 
-/*Странно, но почему-то кнопка не наследует свойства*/
 .modal-btn {
+    display: block;
+    margin: 0px auto;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-width: 200px;
+    min-height: 50px;
+    border: none;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;
-    /* identical to box height, or 188% */
     cursor: pointer;
     letter-spacing: 0.06em;
     color: #FFFFFF;
-    background: var(--acent-color);
+    background-color: var(--acent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
 
 }
 
-/* на кнопке должен быть хвер и фокус, но я в фигме не нашел какой*/
-/*.modal-btn:hover,
-.modal-btn:focus {}. поэтому задаю пока томато*/
-
 .modal-btn:hover,
 .modal-btn:focus {
-    color: tomato;
-    background: var(--primary-text-color)
+    background-color: #188CE8;
 }
 
 
@@ -220,6 +230,41 @@ img {
 
 
 /*=========Особенности(features)=========*/
+.features {
+    padding-top: 52px;
+    padding-bottom: 0px;
+    /*получается, что внутрений отступ секции больше, чем на макете
+    но я пока не знаю, как сделать подругому,
+    как вариант размер заголовка 42 пикселя 
+    +52 пикселя=94 пикселя, знаю, что это костыль
+    потом переделаю*/
+}
+
+/*скрываем заголовок */
+.features-title {
+    visibility: hidden;
+    margin-bottom: 0px;
+
+}
+
+.features-list {
+    display: flex;
+    /*justify-content: space-between;*/
+    flex-wrap: wrap;
+    gap: 30px;
+
+
+}
+
+.features-list-item {
+    /* width: 270px;*/
+    width: calc((100% - 90px)/4);
+}
+
+/*.features-list-item:not(:last-child) {
+    margin-right: 30px;
+}*/
+
 .features-list-title {
     font-weight: 700;
     font-size: 14px;
@@ -238,21 +283,60 @@ img {
 
 /*=========/Особенности(features)=========*/
 /*=========Чем мы занимаемся=========*/
+.work-list {
+    display: flex;
+    /* как вариант можно использовать justify-content: space-between;*/
+    gap: 30px;
+    flex-wrap: wrap;
+
+}
+
 /*=========/Чем мы занимаемся=========*/
 /*=========Наша команда(Team)=========*/
+.team-section {
+    background-color: #E5E5E5;
+}
+
+.team-list {
+    display: flex;
+    flex-wrap: wrap;
+    /*перенос элементов, если 
+    еще будут добавляться карточки с работниками*/
+    column-gap: 30px;
+
+}
+
+
+
 .team-list-title {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.19;
+    text-align: center;
+    margin-top: 30px;
 
 
 
 }
 
+.team-list-item {
+    background: #FFFFFF;
+    width: calc((100% - 90px)/4);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+    /* Надо задавать ширину флекс елементам,
+    calc((100% - кол-во_зазоров_в_строке * значение_одного_зазора) 
+    / кол-во_элементов_в_строке)*/
+
+}
+
+
 .team-list-text {
 
     font-size: 16px;
     line-height: 1.91;
+    text-align: center;
+    margin-bottom: 30px;
 
     color: var(--secondary-text-color);
 
@@ -260,11 +344,11 @@ img {
 
 /*=========/Наша команда(Team)=========*/
 /*===========Footer=================*/
-.footer {
+.footer-section {
     background-color: var(--background-color)
 }
 
-.footer .logo-color {
+.footer-section .logo-color {
     color: var(--white-color);
 
 }
