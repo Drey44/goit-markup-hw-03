@@ -7,6 +7,7 @@
     --logo-black-color: #000000;
     --footer-link-color: rgba(255, 255, 255, 0.6);
     --nav-button-bg-color: #F5F4FA;
+    --portfolio-thumb-border-color: #EEEEEE;
 }
 
 h1,
@@ -231,20 +232,19 @@ img {
 
 /*=========Особенности(features)=========*/
 .features {
-    padding-top: 52px;
+    padding-top: 94px;
     padding-bottom: 0px;
-    /*получается, что внутрений отступ секции больше, чем на макете
-    но я пока не знаю, как сделать подругому,
-    как вариант размер заголовка 42 пикселя 
-    +52 пикселя=94 пикселя, знаю, что это костыль
-    потом переделаю*/
+
 }
 
 /*скрываем заголовок */
 .features-title {
-    visibility: hidden;
-    margin-bottom: 0px;
-
+    position: absolute;
+    top: -999999em;
+    left: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
 .features-list {
@@ -345,12 +345,24 @@ img {
 /*=========/Наша команда(Team)=========*/
 /*===========Footer=================*/
 .footer-section {
-    background-color: var(--background-color)
+    background-color: var(--background-color);
+    padding-top: 60px;
+    padding-bottom: 60px;
+
 }
 
 .footer-section .logo-color {
     color: var(--white-color);
 
+}
+
+.footer-logo {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.footer-list-item:not(:last-child) {
+    margin-bottom: 9px;
 }
 
 .map,
@@ -362,8 +374,6 @@ img {
 }
 
 .footer-link {
-
-
     color: var(--footer-link-color)
 }
 
@@ -383,22 +393,29 @@ img {
 
 /*=====================================Portfolio============================================*/
 /*Заголовок будет скрыт, поэтому применил параметры с Н1 главной страницы*/
-.main-title {
-    font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
+/*скрываем заголовок */
 
-    text-align: center;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--logo-black-color)
+
+.main-title {
+
+    position: absolute;
+    top: -999999em;
+    left: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+
+/*=====================Кнопки портфолио=====================*/
+.button-list {
+    display: flex;
+    justify-content: center;
+    column-gap: 8px;
 }
 
 .nav-btn {
-    /*========================Кнопки навигации по портфолио========================*/
-    /*Странно, но почему-то кнопка не наследует свойства*/
-
-
+    /*display: block;*/
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -406,23 +423,48 @@ img {
     text-align: center;
     cursor: pointer;
     color: var(--primary-text-color);
-
+    background-color: var(--nav-button-bg-color);
+    border-radius: 4px;
+    border: none;
+    padding: 6px 22px;
 }
 
 .nav-btn:focus,
 .nav-btn:hover {
     color: var(--white-color);
-    background: var(--acent-color);
+    background-color: var(--acent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+
+}
+
+.nav-btn-active {
+    background-color: var(--acent-color);
+    color: var(--white-color);
+}
+
+.button-list {
+    margin-bottom: 50px;
 }
 
 /*=========================Выполненные проекты=========================*/
+
+.portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+}
+
+.portfolio-list-item {
+    width: calc((100% - 60px)/3);
+}
+
 .portfolio-list-title {
-
-
     font-weight: 700;
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
+    margin-bottom: 4px;
 }
 
 .portfolio-list-text {
@@ -430,7 +472,17 @@ img {
     font-size: 16px;
     line-height: 1.88;
     color: var(--secondary-text-color);
+
 }
 
+.portfolio-img-thumb {
+    padding-left: 23px;
+    padding-right: 23px;
+    padding-top: 20px;
+    padding-bottom: 19px;
+    border: 1px solid var(--portfolio-thumb-border-color);
+    border-top: none;
+
+}
 
 /*===========/Portfolio=================*/
